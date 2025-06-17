@@ -13,11 +13,25 @@
 * {
   margin: 0;
 }
+
+html {
+  font-size: 16px;
+}
+
 body {
   /* 3. Add accessible line-height */
   line-height: 1.5;
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  background: var(--clr-lightGrayishBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* full screen height */
+  max-width: 100vw;
+  margin: 0;
+  position: relative;
+  padding-bottom: 2rem; /* space for the attribution */
 }
 /* 5. Improve media defaults */
 img, picture, video, canvas, svg {
@@ -48,13 +62,68 @@ h1, h2, h3, h4, h5, h6 {
 
 /** Global CSS **/
 /* We recommend writing minimal component-specific CSS here */
-
-
-/** Attribution CSS **/
-.attribution { 
-  font-size: 13px; 
-  text-align: center; 
+.app-container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  margin: auto;
+  max-width: 70rem;
+  max-height: 25rem;
+  min-height: 0;
+  min-width: 0;
+  font-family: var(--ff-base);
+  font-size: var(--font-paragraph);
+  font-weight: var(--fw-regular);
 }
+
+.attribution {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.5rem;
+  text-align: center;
+}
+
 .attribution a { 
   color: hsl(228, 45%, 44%); 
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 6px;
+  }
+  .app-container {
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  grid-template-columns: none;
+  margin: auto;
+  max-width: 35rem;
+  max-height: 50rem;
+  min-height: 0;
+  min-width: 0;
+  }
 }
